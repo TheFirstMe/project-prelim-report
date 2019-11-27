@@ -1,0 +1,38 @@
+Handwriting recognition is needed to digitize answer papers. Deep learning is preferred
+for handwriting recognition for better accuracy. Zhu \emph{et al.} \cite{8565866} proposed a methodology for
+offline text recognition in answer papers. They noticed that most existing studies and public
+datasets for handwritten Chinese text recognition are based on the regular documents with clean
+and blank background, lacking research reports for handwritten text recognition on challenging
+areas such as educational documents and financial bills. They focused on examination paper
+text recognition and construct a challenging dataset named examination paper text (SCUT-EPT)
+dataset, which contains 50 000 text line images (40,000 for training and 10,000 for testing)
+selected from the examination papers of 2,986 volunteers. The proposed SCUT-EPT dataset
+presents numerous novel challenges, including character erasure, text line supplement,
+character/phrase switching, noised background, nonuniform word size, and unbalanced text
+length. In their experiments, the current advanced text recognition methods, such as
+convolutional recurrent neural network (CRNN) exhibits poor performance on the proposed
+SCUT-EPT dataset, proving the challenge and significance of the dataset. Nevertheless,
+through visualizing and error analysis, they observed that humans can avoid vast majority of
+the error predictions, which reveal the limitations and drawbacks of the current methods for
+handwritten Chinese text recognition (HCTR). Finally, three popular sequence transcription
+methods, connectionist temporal classification (CTC), attention mechanism, and cascaded 
+attention-CTC were investigated for HCTR problem. Although the attention mechanism has
+been proved to be very effective in English scene text recognition, its performance is far inferior
+to the CTC method in the case of HCTR with large-scale character set.
+
+
+Manual grading of essays by humans is time-consuming and likely to be susceptible to
+inconsistencies and inaccuracies. In recent years, an abundance of research has been done to
+automate essay evaluation processes, yet little has been done to take into consideration the
+syntax, semantic coherence and sentiments of the essay's text together. Janda \emph{et al.} \cite{8788526} proposed
+a methodology for automated essay evaluation. The proposed system incorporates not just the
+rule-based grammar and surface level coherence check but also includes the semantic similarity
+of the sentences. They proposed to use Graph-based relationships within the essay's content and
+polarity of opinion expressions. Semantic similarity is determined between each statement of
+the essay to form these Graph-based spatial relationships and novel features are obtained from
+it. Their algorithm uses 23 salient features with high predictive power, which is less than the
+current systems while considering every aspect to cover the dimensions that a human grader
+focuses on. Fewer features helps get rid of the redundancies of the data so that the predictions
+are based on more representative features and are robust to noisy data. The resulting agreement
+between human grader's score and the system's prediction is measured using Quadratic
+Weighted Kappa (QWK). Their system produces a QWK of 0.793.

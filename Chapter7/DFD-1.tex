@@ -1,0 +1,22 @@
+\begin{figure}[!htb]
+    \centering
+    \begin{tikzpicture}[node distance=3cm,thick,scale=0.8, every node/.style={scale=0.8}]
+        \node (proc1) [dfdprocess] {Handwriting recognition};
+        \node (teacher) [dfdentity, left of=proc1, xshift=-3cm] {Teacher};
+        \node (proc2) [dfdprocess, below of=teacher, yshift=-2cm] {Question to Answer key mapping};
+        \node (proc3) [dfdprocess, right of=proc2, xshift=3cm] {Semantic evaluation};
+        \node (result) [data store, right of=proc1, xshift=4cm] {Generate result};
+        \node (student) [dfdentity, right of=proc3, xshift=4cm] {Student};
+
+        \draw [arrow] (teacher) -- node[anchor=south] {Answer paper} (proc1);
+        \draw [arrow] (teacher) -- node[rotate=-90, anchor=south] {Answer key} (proc2);
+        \draw[arrow] (proc1) -- node[rotate=40, anchor=south] {Answers} (proc2);
+        \draw[arrow] (proc2) -- node[anchor=south] {Answers} (proc3);
+        \draw[arrow] (proc3) -- node[rotate=36,anchor=south] {Evaluated Answers} (result);
+        \draw[arrow] (result) -- node[rotate=-90, anchor=south] {Result} (student);
+        \draw[arrow] (proc1) -- node[anchor=south] {Student details} (result);
+    \end{tikzpicture}
+    \vspace{0.5cm}
+    \caption{Data Flow Diagram Level 1}
+    \label{fig:dfd-1}
+\end{figure}

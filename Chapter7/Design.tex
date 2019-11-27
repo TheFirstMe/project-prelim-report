@@ -1,0 +1,39 @@
+\section{Flowcharts}
+\input{Chapter7/FlowChart.tex}
+\noindent The flowchart of our system is shown in Figure \ref{fig:flowchart-1} which
+represents the work flow. First, the teacher uploads the answer paper and the answer key to
+the system. The handwriting recognition system extracts the students details from the front sheet
+of the answer booklet and checks if the student record exists in the database. If no such
+student exists, there is no further reason to extract the answers from the rest of the answer booklet.
+So an error is raised. If the student exists, then the answers are extracted and mapped to
+each question provided in the answer key.
+
+The resultant answer is then provided to the NLP model where semantic analysis is done. Based
+on the similarity, grades are given and the result is generated and stored in a database. 
+Based on the student details extracted previously, the generated results are sent to individual
+students.
+\section{Data Flow Diagrams}
+\subsection{Level-0 Data Flow Diagram}
+\input{Chapter7/DFD-0.tex}
+\noindent Figure \ref{fig:dfd-0} shows the Level-0 Data Flow Diagram of our system. 
+As every level 0
+DFD is designed, this diagram also gives the abstract view of our system. The external entities
+are the \emph{Teacher} and \emph{Student}. Our system is shown as a single process \emph{Answer
+paper evaluation}. The \emph{Teacher} uploads the answer paper and answer key to the \emph{
+Answer paper evaluation} process which gives out the result to the \emph{Student}.
+\subsection{Level-1 Data Flow Diagram}
+\input{Chapter7/DFD-1.tex}
+\noindent Figure \ref{fig:dfd-1} shows the Level-1 Data Flow Diagram of our system.
+It is a more detailed representation of the Level-0 Data Flow Diagram.
+The external entities are same as before: \emph{Teacher} and \emph{Student}.
+The \emph{Answer paper evaluation} process is broken down into several parts.
+Now, the answer paper from the \emph{Teacher} goes to a \emph{Handwriting recognition}
+process. The answer key from the \emph{Teacher}
+and the recognized answer from the 
+\emph{Handwriting recognition} goes to a \emph{Question to Answer key mapping} process.
+The modified answers from the \emph{Question to Answer key mapping} process
+goes to the \emph{Semantic evaluation} process. Student details from
+the \emph{Handwriting recognition} process and evaluated answers
+from the \emph{Semantic evaluation} process goes to the
+\emph{Generate result} data store where the result is stored 
+and also result to that particular student is sent.

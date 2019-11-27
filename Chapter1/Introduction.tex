@@ -1,0 +1,41 @@
+Automation is preferred in most areas nowadays. It saves both time and cost. In the
+current education system, answer scripts are evaluated by hand and this is time consuming. The
+result declaration is in turn delayed. Handwriting recognition is needed along with semantic
+analysis of text for the automation process. The technologies to be used for this are Deep
+Learning and Natural Language Processing (NLP). 
+
+Handwriting recognition of different languages are challenging issues and receive 
+extensive attention from researchers.
+In recent years, numerous handwritten datasets have been
+published in the field to promote the advancement of the
+community. In general, handwritten datasets can be divided
+into two categories, i.e., online and offline datasets. For
+example, there are offline handwritten datasets such as
+French paragraph dataset Rimes \cite{augustin2006rimes}, English text dataset
+IAM \cite{marti2002iam}, Arabic datasets of IFN/ENIT \cite{pechwitz2002baseline} and KHATT \cite{mahmoud2012khatt},
+Chinese dataset CASIA-HWDB \cite{liu2011casia} and HIT-MW \cite{su2006hit}. For
+online handwritten datasets, there are Japanese text datasets
+Kondate \cite{matsushita2014database} and character dataset TUAT Nakayosi\_t and
+Kuchibue\_d \cite{nakagawa2004collection}, English text dataset IAM-OnDB \cite{liwicki2005iam},
+Chinese datasets SCUT-COUCH2009 \cite{jin2011scut}, CASIAOLHWDB \cite{liu2011casia}, and ICDAR2013 competition set \cite{yin2013icdar}.
+In this project, we use the IAM dataset for training our LSTM model.
+
+Generally in an answer paper evaluation, a human grader assesses and assigns
+a score to a submission which is written concerning
+an answer's prompt. This is a laborious and tiring task for
+the graders. Also, human graders can be imperfect; they are
+susceptible to biases and irregularities based on other chores
+and activities they do in life \cite{shermis2003automated}. Different human graders also
+have different grading styles and can also tend to give an overall higher grade just 
+based on one good impression regarding
+a particular aspect. A computer system can overcome all
+these human shortcomings by uniform assessment throughout. 
+Understanding human language is considered a laborious
+task due to its complexity. There are numerous ways to
+arrange words in a sentence. Also, words can have multiple meanings in different contexts. 
+Therefore context-based
+knowledge is necessary to decipher the sentences correctly.
+
+Our proposed system makes use of an RNN architecture model like LSTM to recognize
+handwritten answer sheets and convert them to text. This text is semantically 
+analyzed using an NLP model with an answer key to generate results. 

@@ -1,0 +1,51 @@
+
+\begin{figure}[!htb]
+    \centering
+    \noindent\resizebox{\textwidth}{!}{
+    
+        \begin{ganttchart}[%Specs
+            x unit = 2cm,  %<---------------------- New x unit 
+            y unit title=0.8cm,
+            y unit chart=1cm,
+            vgrid, hgrid,
+            title height=1,
+        %     title/.style={fill=none},
+            title label font=\bfseries\footnotesize,
+            bar/.style={fill=green},
+            bar height=0.5,
+            bar left shift=0.05,
+            bar right shift=-0.05,
+            progress label text={},
+            group right shift=0,
+            group top shift=0.7,
+            group height=.3,
+            group peaks width={0.2},
+            inline]{1}{7}
+           %labels
+        
+           \gantttitle{2019}{3}
+           \gantttitle{2020}{4} \\                 % title 
+           \gantttitle{October}{1}                      % title 3
+           \gantttitle{November}{1}
+           \gantttitle{December}{1}
+           \gantttitle{January}{1}
+           \gantttitle{February}{1}
+           \gantttitle{March}{1}
+           \gantttitle{April}{1}\\
+        
+           % Setting group if any
+        
+        %    \ganttgroup[inline=false]{Group 1}{1}{5}\\ 
+        
+           \ganttbar[inline=false]{Literature Survey}{1}{2}\\
+           \ganttbar[progress=0,inline=false]{Create \& train RNN model}{3}{4}\\       
+           \ganttbar[progress=0,inline=false]{Separate answers \& map to answer key}{4}{4}\\
+           \ganttbar[progress=0,inline=false]{Create \& train NLP Model}{4}{5}\\
+           \ganttbar[progress=0,inline=false]{Test Primary System}{6}{6}\\
+           \ganttbar[progress=0,inline=false]{Evaluation of performance}{7}{7}
+        \end{ganttchart}
+        }
+        \vspace{0.5cm}
+        \caption{Gantt Chart}
+        \label{fig:gantt}
+\end{figure}

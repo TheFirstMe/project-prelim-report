@@ -1,0 +1,110 @@
+\begin{figure}[!htb]
+    \vspace{0.5cm}
+    \centering
+    \begin{tikzpicture}[node distance=7cm,thick,scale=0.5, every node/.style={scale=0.5}]
+        \node (t1) [task] 
+        {
+            \begin{tabular}{x{2.8cm}|x{2.5cm}}
+                \multicolumn{2}{h{6cm}}{Data collection \& cleaning\Strut} \\\hline
+                \ml{\Strut {01}} & \ml{\Strut {21 days}} \\\hline
+                \ml{\Strut {01-12-2019}} & \ml{\Strut {20-12-2019}}
+              \end{tabular}
+        };
+        
+        \node (t2) [task, above of=t1, xshift=6cm] 
+        {
+            \begin{tabular}{x{2.8cm}|x{2.5cm}}
+                \multicolumn{2}{h{6cm}}{GUI Design} \\\hline
+                \ml{\Strut {02}} & \ml{\Strut {9 days}} \\\hline
+                \ml{\Strut {23-12-2019}} & \ml{\Strut {31-12-2019}}
+              \end{tabular}
+        };
+    
+        \node (t3) [task, below of=t1, xshift=1cm] 
+        {
+            \begin{tabular}{x{2.8cm}|x{2.5cm}}
+                \multicolumn{2}{h{6cm}}{LSTM Model Design} \\\hline
+                \ml{\Strut {04}} & \ml{\Strut {21 days}} \\\hline
+                \ml{\Strut {01-12-2019}} & \ml{\Strut {20-12-2019}}
+              \end{tabular}
+        };
+    
+        \node (t4) [task, right of=t3, xshift=1cm] 
+        {
+            \begin{tabular}{x{2.8cm}|x{2.5cm}}
+                \multicolumn{2}{h{6cm}}{LSTM Model Training} \\\hline
+                \ml{\Strut {05}} & \ml{\Strut {32 days}} \\\hline
+                \ml{\Strut {21-12-2019}} & \ml{\Strut {21-01-2020}}
+              \end{tabular}
+        };
+    
+        \node (t5) [task, right of=t4, xshift=1cm] 
+        {
+            \begin{tabular}{x{2.8cm}|x{2.5cm}}
+                \multicolumn{2}{h{6cm}}{LSTM Model Testing} \\\hline
+                \ml{\Strut {06}} & \ml{\Strut {17 days}} \\\hline
+                \ml{\Strut {22-01-2020}} & \ml{\Strut {07-02-2020}}
+              \end{tabular}
+        };
+    
+        \node (t6) [task, below of=t3] 
+        {
+            \begin{tabular}{x{2.8cm}|x{2.5cm}}
+                \multicolumn{2}{h{6cm}}{NLP Model Design} \\\hline
+                \ml{\Strut {07}} & \ml{\Strut {21 days}} \\\hline
+                \ml{\Strut {01-01-2020}} & \ml{\Strut {31-01-2020}}
+              \end{tabular}
+        };
+    
+        \node (t7) [task, right of=t6, xshift=1cm] 
+        {
+            \begin{tabular}{x{2.8cm}|x{2.5cm}}
+                \multicolumn{2}{h{6cm}}{NLP Model Training} \\\hline
+                \ml{\Strut {08}} & \ml{\Strut {21 days}} \\\hline
+                \ml{\Strut {01-02-2020}} & \ml{\Strut {28-02-2020}}
+              \end{tabular}
+        };
+    
+        \node (t8) [task, right of=t7, xshift=1cm] 
+        {
+            \begin{tabular}{x{2.8cm}|x{2.5cm}}
+                \multicolumn{2}{h{6cm}}{NLP Model Testing} \\\hline
+                \ml{\Strut {09}} & \ml{\Strut {10 days}} \\\hline
+                \ml{\Strut {01-03-2020}} & \ml{\Strut {31-03-2020}}
+              \end{tabular}
+        };
+    
+        \node (t9) [task, right of=t2, xshift=1cm]
+        {
+            \begin{tabular}{x{2.8cm}|x{2.5cm}}
+                \multicolumn{2}{h{6cm}}{Q2A mapping} \\\hline
+                \ml{\Strut {03}} & \ml{\Strut {7 days}} \\\hline
+                \ml{\Strut {01-01-2020}} & \ml{\Strut {07-01-2020}}
+              \end{tabular}
+        };
+    
+        \node (t10) [task, right of=t9, below of=t9, xshift=-1.5cm]
+        {
+            \begin{tabular}{x{2.8cm}|x{2.5cm}}
+                \multicolumn{2}{h{6cm}}{Result generation} \\\hline
+                \ml{\Strut {10}} & \ml{\Strut {21 days}} \\\hline
+                \ml{\Strut {01-04-2020}} & \ml{\Strut {30-04-2020}}
+              \end{tabular}
+        };
+    
+        \draw[arrow] (t1) |- (t2);
+        \draw[arrow] (t1) |- ($(t1.south east) - (0,1)$) --($(t3.north east)-(1,0)$);
+        \draw[arrow] (t3) -- (t4);
+        \draw[arrow] (t4) -- (t5);
+        \draw[arrow] (t1) |- ($(t1.south east) - (8,1)$) |- (t6.west);
+        \draw[arrow] (t6) -- (t7);
+        \draw[arrow] (t7) -- (t8);
+        \draw[arrow] (t2) -- (t9);
+        \draw[arrow] (t9.east) -| (t10);
+        \draw[arrow] (t5.east) -| ($(t10.south)+(2,0)$);
+        \draw[arrow] (t8.east) -| ($(t10.south east)+(1,-1)$) |- (t10.east);
+    \end{tikzpicture}
+    \vspace{0.5cm}
+    \caption{PERT chart}
+    \label{fig:pert}
+\end{figure}
