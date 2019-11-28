@@ -1,6 +1,7 @@
 \begin{figure}[!htb]
     \centering
-    \begin{tikzpicture}[->,>=stealth',auto,node distance=3cm,thick,scale=0.9, every node/.style={scale=0.9}]
+    \noindent\resizebox{\textwidth}{!}{
+    \begin{tikzpicture}[->,>=stealth',auto,node distance=3cm,thick]
         \node (proc1) [dfdprocess] {Answer paper evaluation};
         \node (teacher) [dfdentity, left of=proc1, xshift=-3cm] {Teacher};
         \node (student) [dfdentity, right of=proc1, xshift=3cm] {Student};
@@ -13,6 +14,7 @@
         \path    
             (teacher) edge[bend left] node [text centered] {Answer key} (proc1);
     \end{tikzpicture}
+    }
     \vspace{0.5cm}
     \caption{Data Flow Diagram Level 0}
     \label{fig:dfd-0}

@@ -1,8 +1,9 @@
 \begin{figure}[!htb]
     \vspace{1cm}
-    \hspace{-1.6cm}
-    % \centering
-    \begin{tikzpicture}[node distance=7cm,thick,scale=0.6, every node/.style={scale=0.6}]
+    % \hspace{-1.6cm}
+    \centering
+    \noindent\resizebox{\textwidth}{!}{
+    \begin{tikzpicture}[node distance=7cm,thick]
         \node (t1) [task] 
         {
             \begin{tabular}{x{2.8cm}|x{2.5cm}}
@@ -12,7 +13,7 @@
               \end{tabular}
         };
         
-        \node (t2) [task, above of=t1, xshift=6cm] 
+        \node (t2) [task, above of=t1, xshift=3.79cm] 
         {
             \begin{tabular}{x{2.8cm}|x{2.5cm}}
                 \multicolumn{2}{h{6cm}}{GUI Design} \\\hline
@@ -21,7 +22,7 @@
               \end{tabular}
         };
     
-        \node (t3) [task, below of=t1, xshift=1cm] 
+        \node (t3) [task, below of=t1] 
         {
             \begin{tabular}{x{2.8cm}|x{2.5cm}}
                 \multicolumn{2}{h{6cm}}{LSTM Model Design} \\\hline
@@ -30,7 +31,7 @@
               \end{tabular}
         };
     
-        \node (t4) [task, right of=t3, xshift=1cm] 
+        \node (t4) [task, right of=t3, xshift=0.5cm] 
         {
             \begin{tabular}{x{2.8cm}|x{2.5cm}}
                 \multicolumn{2}{h{6cm}}{LSTM Model Training} \\\hline
@@ -39,7 +40,7 @@
               \end{tabular}
         };
     
-        \node (t5) [task, right of=t4, xshift=1cm] 
+        \node (t5) [task, right of=t4, xshift=0.5cm] 
         {
             \begin{tabular}{x{2.8cm}|x{2.5cm}}
                 \multicolumn{2}{h{6cm}}{LSTM Model Testing} \\\hline
@@ -57,7 +58,7 @@
               \end{tabular}
         };
     
-        \node (t7) [task, right of=t6, xshift=1cm] 
+        \node (t7) [task, right of=t6, xshift=0.5cm] 
         {
             \begin{tabular}{x{2.8cm}|x{2.5cm}}
                 \multicolumn{2}{h{6cm}}{NLP Model Training} \\\hline
@@ -66,7 +67,7 @@
               \end{tabular}
         };
     
-        \node (t8) [task, right of=t7, xshift=1cm] 
+        \node (t8) [task, right of=t7, xshift=0.5cm] 
         {
             \begin{tabular}{x{2.8cm}|x{2.5cm}}
                 \multicolumn{2}{h{6cm}}{NLP Model Testing} \\\hline
@@ -75,7 +76,7 @@
               \end{tabular}
         };
     
-        \node (t9) [task, right of=t2, xshift=1cm]
+        \node (t9) [task, right of=t2, xshift=.5cm]
         {
             \begin{tabular}{x{2.8cm}|x{2.5cm}}
                 \multicolumn{2}{h{6cm}}{Q2A mapping} \\\hline
@@ -84,7 +85,7 @@
               \end{tabular}
         };
     
-        \node (t10) [task, right of=t9, below of=t9, xshift=-1.5cm]
+        \node (t10) [task, above of=t5]
         {
             \begin{tabular}{x{2.8cm}|x{2.5cm}}
                 \multicolumn{2}{h{6cm}}{Result generation} \\\hline
@@ -93,18 +94,19 @@
               \end{tabular}
         };
     
-        \draw[arrow] (t1) |- (t2);
-        \draw[arrow] (t1) |- ($(t1.south east) - (0,1)$) --($(t3.north east)-(1,0)$);
+        \draw[arrow] (t1.north) |- (t2.west);
+        \draw[arrow] (t1) -- (t3);
         \draw[arrow] (t3) -- (t4);
         \draw[arrow] (t4) -- (t5);
-        \draw[arrow] (t1) |- ($(t1.south east) - (8,1)$) |- (t6.west);
+        \draw[arrow] (t1) |- ($(t1.south east) - (7,1)$) |- (t6.west);
         \draw[arrow] (t6) -- (t7);
         \draw[arrow] (t7) -- (t8);
         \draw[arrow] (t2) -- (t9);
-        \draw[arrow] (t9.east) -| (t10);
-        \draw[arrow] (t5.east) -| ($(t10.south)+(2,0)$);
-        \draw[arrow] (t8.east) -| ($(t10.south east)+(1,-1)$) |- (t10.east);
+        \draw[arrow] (t9.east) -| (t10.north);
+        \draw[arrow] (t5) -- (t10);
+        \draw[arrow] (t8.east) -| ($(t10.south east)+(.5,-1)$) |- (t10.east);
     \end{tikzpicture}
+    }
     \vspace{0.5cm}
     \caption{PERT chart}
     \label{fig:pert}

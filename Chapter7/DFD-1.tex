@@ -1,6 +1,8 @@
-\begin{figure}[!htb]
-    \hspace{-1cm}
-    \begin{tikzpicture}[node distance=3cm,thick,scale=0.9, every node/.style={scale=0.9}]
+\begin{figure}[!ht]
+    % \hspace{-1cm}
+    \centering
+    \noindent\resizebox{\textwidth}{!}{
+    \begin{tikzpicture}[node distance=3cm,thick]
         \node (proc1) [dfdprocess] {Handwriting recognition};
         \node (teacher) [dfdentity, left of=proc1, xshift=-3cm] {Teacher};
         \node (proc2) [dfdprocess, below of=teacher, yshift=-2cm] {Question to Answer key mapping};
@@ -16,6 +18,7 @@
         \draw[arrow] (result) -- node[rotate=-90, anchor=south] {Result} (student);
         \draw[arrow] (proc1) -- node[anchor=south] {Student details} (result);
     \end{tikzpicture}
+    }
     \vspace{0.5cm}
     \caption{Data Flow Diagram Level 1}
     \label{fig:dfd-1}
