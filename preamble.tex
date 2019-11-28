@@ -113,19 +113,19 @@
 
 \usepackage{tikz}
 \usetikzlibrary{shapes, arrows,}
-\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=4cm, minimum height=1.3cm,text centered, draw=black, fill=red!30]
-\tikzstyle{process} = [rectangle, minimum width=4cm, minimum height=1.3cm, text centered, draw=black, fill=orange!30]
-\tikzstyle{decision} = [diamond, minimum width=4cm, minimum height=1.3cm, text centered, draw=black, fill=green!30]
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=4cm, minimum height=1.3cm,text centered, draw=black]%, fill=red!30]
+\tikzstyle{process} = [rectangle, minimum width=4cm, minimum height=1.3cm, text centered, draw=black]%, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=4cm, minimum height=1.3cm, text centered, draw=black]%, fill=green!30]
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
-\tikzstyle{dfdprocess} = [circle,draw=black, inner sep=0pt,minimum size=3cm, fill=red!30, text width=3cm, text centered]
-\tikzstyle{dfdentity} = [rectangle, rounded corners, minimum width=3cm, minimum height=1.2cm,text centered, draw=black, fill=red!30]
+\tikzstyle{dfdprocess} = [circle,draw=black, inner sep=0pt,minimum size=3cm, text width=3cm, text centered]
+\tikzstyle{dfdentity} = [rectangle, rounded corners, minimum width=3cm, minimum height=1.2cm,text centered, draw=black]%, fill=red!30]
 \tikzset{data store/.style={
         minimum width=4.5cm,
         minimum height=1.2cm,
         append after command={
             \pgfextra
-            \fill[fill=red!30] (\tikzlastnode.south east) [rounded corners] -| (\tikzlastnode.west) |- (\tikzlastnode.north) [sharp corners] -| (\tikzlastnode.north east)--cycle;
+            \fill[fill=white] (\tikzlastnode.south east) [rounded corners] -| (\tikzlastnode.west) |- (\tikzlastnode.north) [sharp corners] -| (\tikzlastnode.north east)--cycle;
             \draw[rounded corners] (\tikzlastnode.south east) -| (\tikzlastnode.west) |- (\tikzlastnode.north east);
         \endpgfextra}
     }
@@ -142,21 +142,12 @@ progress label node anchor/.append style={text=red}}
 \makeatletter
 \newcommand*{\Strut}[1][1em]{\vrule\@width\z@\@height#1\@depth\z@\relax}
 \makeatother
-\definecolor{bottomcol}{RGB}{222,222,222}
-\tikzstyle{boxed}=[
-	rectangle
-    draw=black,
-    text centered,
-    anchor=north,
-    text=black,
-    text width=3cm,
-    shading=axis,
-    bottom color=bottomcol,top color=white,shading angle=45]
+
 \tikzstyle{task}=[
+    rounded corners,
 	draw,
 	inner sep=+0pt
 ]
 \usepackage{array}
-\usepackage{xcolor,colortbl}
-\newcolumntype{h}[1]{>{\cellcolor{red!30}\vspace{0.25cm}\centering\arraybackslash\hspace{0pt}\vspace{0.25cm}\bf}b{#1}}
+\newcolumntype{h}[1]{>{\vspace{0.25cm}\centering\arraybackslash\hspace{0pt}\vspace{0.25cm}\bf}b{#1}}
 \newcolumntype{x}[1]{>{\vspace{0.25cm}\centering\arraybackslash\hspace{0pt}\vspace{0.25cm}}b{#1}}

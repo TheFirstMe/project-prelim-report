@@ -1,12 +1,13 @@
 \begin{figure}[!h]
-        \centering
-        \begin{tikzpicture}[node distance=2.5cm,thick,scale=0.62, every node/.style={scale=0.62}]
+    \vspace{1cm}
+        \hspace{-2cm}
+        \begin{tikzpicture}[node distance=2.5cm,thick,scale=0.8, every node/.style={scale=0.8}]
             \node (start) [startstop] {Start};
-            \node (pro1) [process, below of=start, text width=\textwidth-8.5cm] {Upload answer paper \& answer key};
+            \node (pro1) [process, below of=start, text width=\textwidth-10cm] {Upload answer paper \& answer key};
             \node (pro2) [process, below of=pro1] {Extract student details};
             \node (dec1) [decision, right of=pro2, xshift=3cm] {Student exists?};
             \node (pro3) [process, right of=dec1, xshift=3cm] {Extract answers};
-            \node (pro4) [process, text width=\textwidth-8.5cm, below of=pro3, yshift=-1cm] {Map answers to answer keys};
+            \node (pro4) [process, text width=\textwidth-10cm, below of=pro3, yshift=-1cm] {Map answers to answer keys};
             \node (pro5) [process, right of=pro4, xshift=3cm] {Evaluate answers};
             \node (pro6) [process, above of=pro5, yshift=1cm] {Generate report};
             \node (pro7) [process, above of=pro6] {Send report to student};
